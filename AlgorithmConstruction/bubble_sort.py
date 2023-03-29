@@ -1,3 +1,5 @@
+from bigO import BigO
+import numpy as np
 def bubbleSort(array):
     
   # loop through each element of array
@@ -26,8 +28,32 @@ def bubbleSort(array):
     if not swapped:
       break
 
-data = [6, -9, 80, -11, 53, 72, -100, 33, -45]
+data = np.random.randint(-100, 100, size=50)
 
 bubbleSort(data)
 
 print('Sorted Array in Ascending Order:', data)
+
+lib = BigO()
+complexity = lib.test(bubbleSort, "sorted")
+complexity = lib.test(bubbleSort, "random")
+complexity = lib.test(bubbleSort, "reversed")
+complexity = lib.test(bubbleSort, "partial")
+complexity = lib.test(bubbleSort, "Ksorted")
+
+'''
+Output:
+    Sorted Array in Ascending Order: [-96 -94 -88 -80 -73 -65 -60 -56 -56 -55 -53 -51 -50 -48 -46 -39 -38 -36
+                                      -34 -31 -27 -26 -17 -16 -10  -4   1   4   8   9   9  17  26  45  49  60
+                                       62  63  64  66  70  82  82  91  92  92  96  96  96  98]
+    Running bubbleSort(sorted array)...
+    Completed bubbleSort(sorted array): O(n)
+    Running bubbleSort(random array)...
+    Completed bubbleSort(random array): O(n^2)
+    Running bubbleSort(reversed array)...
+    Completed bubbleSort(reversed array): O(n^2)
+    Running bubbleSort(partial array)...
+    Completed bubbleSort(partial array): O(n^2)
+    Running bubbleSort(Ksorted array)...
+    Completed bubbleSort(ksorted array): O(nlog(n))
+'''
