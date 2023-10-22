@@ -1,0 +1,19 @@
+/* Welcome Animation */
+.welcome {
+    opacity: 0;
+    color: #5f046f;
+    left: 2px;
+    transform: translateX(-100%);
+    animation: welcomePopUp 2s ease forwards;
+}
+
+@keyframes welcomePopUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
