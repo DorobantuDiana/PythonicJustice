@@ -1,0 +1,6 @@
+# pip install csvs-to-sqlite datasette
+
+csvs-to-sqlite bigmac.csv bigmac.db
+datasette bigmac.db
+
+
